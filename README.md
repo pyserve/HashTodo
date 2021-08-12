@@ -13,3 +13,10 @@ step 3: Install Expo Go app from play store and open the Expo app
 step 4: scan the barcode from Expo Go and wait for app to build
 
 step 5: Enjoy the Todo app
+
+Inside the app
+1. input some task and enter ADD TODO to add a todo
+2. You can priotize the app
+3. click radio button after completing the todo to mark it completed.
+4. click edit button to edit the todo
+5. Long press the todo item to delete the todo
