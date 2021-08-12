@@ -16,7 +16,8 @@ export default function Home({navigation}){
   const lowPriorityTodos = uncompleteTodos.filter(item => item.priority == 'low')
 
   return(
-      <SafeAreaView style={styles.container}>  
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <SafeAreaView style={styles.container}>
         <CreateTodo />      
         <ScrollView style={{flex: 1}}>
           
@@ -40,6 +41,7 @@ export default function Home({navigation}){
 
         </ScrollView>
       </SafeAreaView>
+    </TouchableWithoutFeedback>
   );
 }
 

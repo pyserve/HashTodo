@@ -14,8 +14,8 @@ export default function CreateTodo(props){
 	    priority: props.priority ? props.priority : 'high'
 	}
 
-	const validationSchema = yup.object({
-	    title: yup.string().required('This field is required'),
+	const validationSchema = yup.object().shape({
+	    title: yup.string().required('write something to add todo').trim(),
 	})
 	
 	const handleEdit = (values) => {
@@ -42,12 +42,14 @@ export default function CreateTodo(props){
               }));
               actions.resetForm();
             }}>
-            {({handleSubmit,values,handleChange,handleReset}) => {
+            {({handleSubmit,values,handleChange,handleReset, errors, touched}) => {
               return(
                 <View>
                   <View style={styles.inputContainer}>
+                    {errors.title && touched.title ? <Text style={styles.errorText}>* {errors.title}</Text> :null}
                     <TextInput value={values.title} placeholder='Add a todo' 
                       onChangeText={handleChange('title')}  style={styles.textInput}/>
+                    
                     <View style={styles.pickerSelect}>
                       <Picker selectedValue={values.priority} onValueChange={handleChange('priority')}
                        style={styles.picker}>
@@ -99,4 +101,11 @@ const styles = StyleSheet.create({
     borderColor: 'lightgray',
     borderRadius: 10,
   },
+  errorText: {
+    fontSize: 12,
+     paddingHorizontal: 15,
+     paddingVertical: 3,
+     fontStyle: 'italic',
+     color: 'crimson'
+  }
 });
