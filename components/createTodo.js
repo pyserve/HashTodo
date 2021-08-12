@@ -76,7 +76,8 @@ const styles = StyleSheet.create({
   pickerSelect: {
     marginBottom: 10,
     paddingVertical: 18,
-    paddingHorizontal: 6
+    paddingHorizontal: 6,
+    backgroundColor: '#fff',
   },
   textInput: {
     paddingHorizontal: 15,
@@ -90,10 +91,11 @@ const styles = StyleSheet.create({
   },
   newTodo: {
     backgroundColor: 'lightgray',
-    paddingVertical: 10,
     borderWidth: 1,
     borderBottomWidth: 3,
     borderBottomColor: 'coral',
+    borderTopWidth: 2,
+    borderTopColor: 'coral',
     borderColor: 'lightgray',
     borderRadius: 10,
   },
